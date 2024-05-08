@@ -1,8 +1,10 @@
-package com.artyom.crud.controller;
+package com.artyom.springbootcrud.controller;
 
-import com.artyom.crud.dto.UserInfo;
-import com.artyom.crud.dto.UserRequest;
-import com.artyom.crud.service.UserService;
+import com.artyom.springbootcrud.dto.UserInfo;
+import com.artyom.springbootcrud.dto.UserRequest;
+import com.artyom.springbootcrud.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -10,8 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.support.RequestContextUtils;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import java.util.Map;
 import java.util.Objects;
 
@@ -33,7 +33,6 @@ public class UsersController {
             } else {
                 model.addAttribute("info", flashMap.get("info"));
             }
-            flashMap.forEach((k, v) -> System.out.println(k + ":" + v));
         }
 
         model.addAttribute("id", "");
@@ -55,7 +54,6 @@ public class UsersController {
         if (binding.hasErrors()) {
             return "user-form";
         }
-
         userService.create(userRequest);
         return "redirect:/users";
     }

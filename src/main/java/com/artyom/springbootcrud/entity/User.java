@@ -1,8 +1,13 @@
-package com.artyom.crud.entity;
+package com.artyom.springbootcrud.entity;
 
-import com.artyom.crud.dto.UserRequest;
+import com.artyom.springbootcrud.dto.UserRequest;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-import javax.persistence.*;
 
 @Entity
 @Table(name = "users")

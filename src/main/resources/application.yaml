@@ -1,1 +1,18 @@
-spring.application.name=spring-boot-crud
+spring:
+  application:
+    name: spring-boot-crud
+  datasource:
+    url:  jdbc:mysql://localhost:3306/public
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect:  org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        hbm2ddl:
+          auto: update
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

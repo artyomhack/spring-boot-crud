@@ -1,15 +1,14 @@
-package com.artyom.crud.service;
+package com.artyom.springbootcrud.service;
 
-import com.artyom.crud.dao.UserDAO;
-import com.artyom.crud.dto.UserInfo;
-import com.artyom.crud.dto.UserList;
-import com.artyom.crud.dto.UserRequest;
-import com.artyom.crud.entity.User;
+import com.artyom.springbootcrud.dao.UserDAO;
+import com.artyom.springbootcrud.dto.UserInfo;
+import com.artyom.springbootcrud.dto.UserList;
+import com.artyom.springbootcrud.dto.UserRequest;
+import com.artyom.springbootcrud.entity.User;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
+import java.util.Collections;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {

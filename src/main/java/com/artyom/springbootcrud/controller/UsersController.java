@@ -33,7 +33,6 @@ public class UsersController {
             } else {
                 model.addAttribute("info", flashMap.get("info"));
             }
-            flashMap.forEach((k, v) -> System.out.println(k + ":" + v));
         }
 
         model.addAttribute("id", "");
@@ -55,7 +54,6 @@ public class UsersController {
         if (binding.hasErrors()) {
             return "user-form";
         }
-
         userService.create(userRequest);
         return "redirect:/users";
     }

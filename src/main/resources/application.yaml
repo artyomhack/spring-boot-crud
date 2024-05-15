@@ -1,10 +1,18 @@
 spring:
+  application:
+    name: spring-boot-crud
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/public
+    url:  jdbc:mysql://localhost:3306/public
     username: root
     password: root
   jpa:
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: true
+    properties:
+      hibernate:
+        dialect:  org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        hbm2ddl:
+          auto: update
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true

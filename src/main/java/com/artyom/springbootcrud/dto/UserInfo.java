@@ -1,6 +1,6 @@
-package com.artyom.crud.dto;
+package com.artyom.springbootcrud.dto;
 
-import com.artyom.crud.entity.User;
+import com.artyom.springbootcrud.entity.User;
 
 public record UserInfo(
         Long id,

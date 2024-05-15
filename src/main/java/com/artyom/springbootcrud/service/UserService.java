@@ -1,8 +1,8 @@
-package com.artyom.crud.service;
+package com.artyom.springbootcrud.service;
 
-import com.artyom.crud.dto.UserInfo;
-import com.artyom.crud.dto.UserList;
-import com.artyom.crud.dto.UserRequest;
+import com.artyom.springbootcrud.dto.UserInfo;
+import com.artyom.springbootcrud.dto.UserList;
+import com.artyom.springbootcrud.dto.UserRequest;
 
 public interface UserService {
     void create(UserRequest request);

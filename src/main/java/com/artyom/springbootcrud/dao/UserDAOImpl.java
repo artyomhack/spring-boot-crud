@@ -1,12 +1,12 @@
-package com.artyom.crud.dao;
+package com.artyom.springbootcrud.dao;
 
-import com.artyom.crud.entity.User;
+import com.artyom.springbootcrud.entity.User;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -47,7 +47,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public Optional<User> fetchById(Long id) {
-        TypedQuery<User>  query = manager.createQuery("from User u WHERE u.id = :id", User.class);
+        TypedQuery<User> query = manager.createQuery("from User u WHERE u.id = :id", User.class);
         query.setParameter("id", id);
         return query.getResultList().isEmpty() ? Optional.empty() : Optional.of(query.getResultList().get(0));
     }

@@ -1,14 +1,7 @@
-package com.artyom.crud.dto;
+package com.artyom.springbootcrud.dto;
 
-import com.artyom.crud.entity.User;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
+import com.artyom.springbootcrud.entity.User;
+import jakarta.validation.constraints.*;
 
 public class UserRequest {
     private Long id;
@@ -69,5 +62,15 @@ public class UserRequest {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "UserRequest{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
